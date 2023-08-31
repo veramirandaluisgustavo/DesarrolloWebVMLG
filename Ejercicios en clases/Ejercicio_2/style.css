@@ -1,0 +1,47 @@
+.rojo{
+    color: #ff0000;
+}
+.amarillo{
+    color: #ffff00;
+}
+.celeste{
+    color:#4c9bd3;
+}
+.azul{
+    color: #366f91;
+}
+.container{
+    
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid red;
+}
+.encabezado{
+    width: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid red;
+    text-align: center;
+}
+#logo{
+    width: 100px;
+    
+
+}
+#title{
+    width: 700px;
+}
+#logo2{
+    width: 100px;
+    
+}
+#log1{
+    width: 100px;
+}
+#log2{
+    width: 100px;
+}
