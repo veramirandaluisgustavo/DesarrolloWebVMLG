@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>numeros</title>
+</head>
+<body>
+    <script>
+        
+        let numero = parseInt(prompt("Ingrese un numero:"));
+
+        
+        function par(num) {
+            if (num % 2 === 0) {
+                return "par";
+            } else {
+                return "impar";
+            }
+        }
+
+        let resultado = par(numero);
+
+        alert(`El numero ${numero} es ${resultado}.`);
+    </script>
+</body>
+</html>

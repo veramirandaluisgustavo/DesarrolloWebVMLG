@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Factorial </title>
+</head>
+<body>
+    <script>
+        
+        let numero = parseInt(prompt("Ingrese un número :"));
+
+        
+        function calcularFactorial(num) {
+            if (num === 0 || num === 1) {
+                return 1;
+            } else {
+                return num * calcularFactorial(num - 1);
+            }
+        }
+
+        
+        let factorial = calcularFactorial(numero);
+
+        
+        alert(`El factorial de es: ${factorial}`);
+    </script>
+</body>
+</html>

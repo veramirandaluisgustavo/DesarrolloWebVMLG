@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Documents</title>
+</head>
+<body>
+    <script>
+        
+        let cadena = prompt("Ingrese texto");
+
+        
+        cadena = cadena.replace(/\s/g, "").toLowerCase();
+
+       
+        let inversa = "";
+        for (let i = cadena.length - 1; i >= 0; i--) {
+            inversa += cadena[i];
+        }
+
+        
+        let resultado = cadena === inversa;
+
+        if (resultado) {
+            alert(`"${cadena}" es un palíndromo.`);
+        } else {
+            alert(`"${cadena}" no es un palíndromo.`);
+        }
+    </script>
+</body>
+</html>
