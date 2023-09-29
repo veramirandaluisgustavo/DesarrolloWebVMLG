@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <title>Document</title>
+</head>
+<body>
+        <section class="pyscript">
+        Hello world! <br>
+        This is the current date and time, as computed by Python:
+        <py-script>
+            from pyzbar import pyzbar
+            import argparse
+            import cv2
+
+            ap = argparse.ArgumentParser()
+            ap.add_argument("-i", "--image", required=True, help="path to input image")
+            args = vars(ap.parse_args())
+
+            #PARA IMAGENES ESTATICAS
+            # image = cv2.imread(args["image"])
+            #
+            # barcodes = pyzbar.decode(image)
+            #
+            # for barcode in barcodes:
+            #     (x, y, w, h) = barcode.rect
+            #     cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            #     barcodeData = barcode.data.decode("utf-8")
+            #     barcodeType = barcode.type
+            #     text = "{} ({})".format(barcodeData, barcodeType)
+            #     cv2.putText(image, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+            #     print("[INFO] Found {} barcode: {}".format(barcodeType, barcodeData))
+            #
+            # cv2.imshow("Image", image)
+            # cv2.waitKey(0)
+
+            #PARA ARCHIVO DE VÍDEO
+            # cap = cv2.VideoCapture("video1.wmv")
+
+
+            #PARA VIDEO EN TIEMPO REAL
+            cap = cv2.VideoCapture(0)
+            #
+            if not cap.isOpened():
+                print("Error")
+
+            while cap.isOpened():
+
+                ret, frame = cap.read()
+                if ret:
+
+                    barcodes = pyzbar.decode(frame)
+                    for barcode in barcodes:
+                        (x, y, w, h) = barcode.rect
+                        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                        barcodeData = barcode.data.decode("utf-8")
+                        barcodeType = barcode.type
+                        text = "{} ({})".format(barcodeData, barcodeType)
+                        cv2.putText(frame, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+                        print("[INFO] Found {} barcode: {}".format(barcodeType, barcodeData))
+
+                    cv2.imshow('Frame', frame)
+
+                    if cv2.waitKey(25) & 0xFF == ord('q'):
+                        break
+
+                else:
+                    break
+
+            cap.release()
+            cv2.destroyAllWindows()
+        </py-script>
+    </section>
+    
+</body>
+</html>
