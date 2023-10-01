@@ -1,0 +1,30 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+.formulario{
+    width: 700px;
+    height: 300px;
+    border: 2px solid #F79646;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+.text1{
+    display: flex;
+}
+#mes{
+    color: #F79646;
+}
+.seleccionador{
+    display: flex;
+    
+}
