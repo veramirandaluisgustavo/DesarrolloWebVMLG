@@ -21,7 +21,7 @@
         let gen =document.getElementById("gen");
         for(i=0;i<a;i++){
             rand =parseInt(Math.random(1,100)*100);
-            gen.innerHTML+="<div><input type='number'  value='"+rand+"' name='numeros' ></div>";
+            gen.innerHTML+="<div><input type='number'  name='numeros' ></div>";
 
         }
         gen.innerHTML+="<button onclick='calcular()'>CALCULAR</button>"
@@ -37,7 +37,7 @@
             }
         }
         console.log("el mayor es: "+parseInt(mayor.value));
-        mayor.style.backgroundColor="yellow"
+        mayor.style.color="yellow"
         
 
     }
