@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label >N :</label>
+        <input type="number" id="valor">
+        <button onclick="enviarDatos()">LLENAR</button>
+        <div id="gen"></div>
+    </div>
+</body>
+
+
+<script>
+    function enviarDatos(){
+        let a =parseInt(document.getElementById("valor").value);
+        let gen =document.getElementById("gen");
+        for(i=0;i<a;i++){
+            rand =parseInt(Math.random(1,100)*100);
+            gen.innerHTML+="<div><input type='number'  value='"+rand+"' name='numeros' ></div>";
+
+        }
+        gen.innerHTML+="<button onclick='calcular()'>CALCULAR</button>"
+    }
+    function calcular(){
+        let valores=document.getElementsByName("numeros");
+        
+        let mayor=valores[0];
+        //console.log("el mayor es: "+parseInt(valores[0].value))
+        for(i=1;i<valores.length;i++){
+            if(parseInt(valores[i].value)>parseInt(mayor.value)){
+                mayor=valores[i];
+            }
+        }
+        console.log("el mayor es: "+parseInt(mayor.value));
+        mayor.style.backgroundColor="yellow"
+        
+
+    }
+</script>
+</html>

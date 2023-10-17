@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>NUMERO A</label>
+        <input id="numA" type="number" >
+    </div>
+    <div>
+        <label>NUMERO B</label>
+        <input id="numB" type="number" >
+    </div>
+    <div>
+        <label>NUMERO C</label>
+        <input id="numC" type="number" >
+    </div>
+    <div>
+        <button onclick="sendDatos()">Calcular</button>
+    </div>
+</body>
+<script>
+    
+
+    function sendDatos(){
+        let b = parseInt(document.getElementById("numB").value);
+        let a = parseInt(document.getElementById("numA").value);
+        let c = parseInt(document.getElementById("numC").value);
+        
+        console.log(a,b,c)
+        document.getElementById("numA").style.backgroundColor="white";
+        document.getElementById("numB").style.backgroundColor="white";
+        document.getElementById("numC").style.backgroundColor="white";
+
+        var mayor =a;
+        if(b>mayor){
+            mayor=b;
+        } 
+        if(c>mayor){
+            mayor=c;
+        }  
+        if(mayor==a){
+            console.log("el mayor es",a)
+            let element_a = document.getElementById("numA");
+            element_a.style.backgroundColor="red";
+        }
+        else{
+            if(mayor==b){
+            console.log("el mayor es",b)
+            let element_b = document.getElementById("numB");
+            element_b.style.backgroundColor="red";
+        }
+        else{
+            console.log("el mayor es",c)
+            let element_c = document.getElementById("numC");
+            element_c.style.backgroundColor="red";
+
+        }
+        
+
+        }
+        
+    }
+</script>
+</html>
