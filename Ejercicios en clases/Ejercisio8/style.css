@@ -1,0 +1,16 @@
+.bordeDerecho{
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+.bordeIzquierdo{
+    border: 1px solid black;
+}
+.cuadrado{
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    text-align: center;
+    
+}

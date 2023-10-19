@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="data">PASSWORD</label>
+        <input type="password" id="password">
+        <button onclick="ver()">MOSTRAR</button>
+    </div>
+    <table  style="border-collapse: collapse;">
+        <tr>
+            <td onclick="mostrar(id)" id="1" class="cuadrado">1</td>
+            <td onclick="mostrar(id)" id="2" class="cuadrado">2</td>
+            <td onclick="mostrar(id)" id="3" class="cuadrado">3</td>
+        </tr>
+        <tr>
+            <td onclick="mostrar(id)" id="4" class="cuadrado">4</td>
+            <td onclick="mostrar(id)" id="5" class="cuadrado">5</td>
+            <td onclick="mostrar(id)" id="6" class="cuadrado">6</td>
+        </tr>
+        <tr>
+            <td onclick="mostrar(id)" id="7" class="cuadrado">7</td>
+            <td onclick="mostrar(id)" id="8" class="cuadrado">8</td>
+            <td onclick="mostrar(id)" id="9" class="cuadrado">9</td>
+        </tr>
+        <tr>
+            <td class="cuadrado"></td>
+            <td onclick="mostrar(id)" id="0" class="cuadrado">0</td>
+            <td onclick="mostrar(id)" id="clear" class="cuadrado">Clear</td>
+        </tr>
+
+    </table>
+    <script>
+        function mostrar(dat){
+            pasword=document.getElementById("password");
+            dato=document.getElementById(dat);
+            console.log(dato.id);
+            if(dato.id=="clear"){
+                document.getElementById("password").value="";
+            }
+            else{
+                
+                document.getElementById("password").value+=dato.id;
+            }
+        }
+        function ver(){
+            pasword=document.getElementById("password");
+            if(pasword.type=="password"){
+                pasword.type="text"
+            }else{
+                pasword.type="password"
+            }
+        }
+    </script>
+</body>
+</html>
