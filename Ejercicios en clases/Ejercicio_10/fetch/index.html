@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <div>
+            <label for="nombres">NOMBRES</label>
+            <input type="text" name="nombres" id="nombres">
+        </div>
+        <div>
+            <label for="apellidos">APELLIDOS</label>
+            <input type="text" name="apellidos" id="apellidos">
+        </div>
+        <div>
+            <label for="departamento">DEPARTAMENTO</label>
+            <select name="departamento" id="departamento" onchange="cargarProvincias()">
+                <option value="">SELECCIONE</option>
+                <option value="1">CHUQUISACA</option>
+                <option value="2">LA PAZ</option>
+                <option value="3">COCHABAMBA</option>
+                <option value="4">ORURO</option>
+                <option value="5">POTOSI</option>
+                <option value="6">TARIJA</option>
+                <option value="7">SANTA CRUZ</option>
+                <option value="8">BENI</option>
+                <option value="9">PANDO</option>
+            </select>
+        </div>
+        <div>
+            <label for="provincias">Provincia</label>
+            <select name="provincia" id="provincia"></select>
+        </div>
+    </form>
+    
+</body>
+</html>

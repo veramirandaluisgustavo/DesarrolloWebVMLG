@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+
+}
+.alumnos{
+    display: flex;
+    height: 950px;
+    width: 1000px;
+    border: 2px solid black;
+   
+
+}
+#contenido{
+    display: flex;
+    height: 950px;
+    width: 1000px;
+    border: 2px solid black;
+
+}
