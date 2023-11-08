@@ -1,12 +1,18 @@
 <?php
 session_start();
 
-$usuario = $_POST['usuario'];
-$contrasena = $_POST['contrasena'];
+$json = file_get_contents('php://input');
+$data = json_decode($json, true);
 
-if ($usuario === 'admin' && $contrasena === '123') {
-    $_SESSION['nivel'] = 'autenticado';
-    echo 'Autenticado correctamente';
+if ($data) {
+    $usuario = $data['usuario'];
+    $contrasena = $data['contrasena'];
+    if ($usuario === 'admin' && $contrasena === '123') {
+            $_SESSION['nivel'] = 'autenticado';
+            echo 'Autenticado correctamente';
+        } else {
+            echo 'No autenticado';
+        }
 } else {
-    echo 'No autenticado';
+    echo 'Error al decodificar los datos JSON.';
 }
