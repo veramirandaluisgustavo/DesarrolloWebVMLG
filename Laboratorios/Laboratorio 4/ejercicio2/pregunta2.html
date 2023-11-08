@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <img style="max-width: 100%;height: auto ;width: auto;" id="imagen" src="escudo.jpg" alt="Imagen">
+    </div>
+    
+    <div>
+        <input type="number" id="cantidad">
+    <button onclick="agrandarImagen()">Agrandar</button>
+    <button onclick="reducirImagen()">Reducir</button>
+    </div>
+    
+
+    <script>
+        function agrandarImagen() {
+            var imagen = document.getElementById("imagen");
+            var cantidad = parseInt(document.getElementById("cantidad").value);
+
+            
+                imagen.style.width = (imagen.offsetWidth + cantidad) + "px";
+            
+        }
+
+        function reducirImagen() {
+            var imagen = document.getElementById("imagen");
+            var cantidad = parseInt(document.getElementById("cantidad").value);
+
+            
+                imagen.style.width = (imagen.offsetWidth - cantidad) + "px";
+            
+        }
+    </script>
+</body>
+</html>

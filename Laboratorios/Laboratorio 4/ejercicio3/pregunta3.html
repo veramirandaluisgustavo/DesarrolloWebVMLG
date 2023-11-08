@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <input type="text" id="elemento" >
+    <button onclick="agregarElemento()">aniadir</button>
+    <ul id="lista"></ul>
+
+    <script>
+        function agregarElemento() {
+            var elementoInput = document.getElementById("elemento");
+            var elemento = elementoInput.value.trim();
+            
+            if (elemento) {
+                var lista = document.getElementById("lista");
+                var nuevoElemento = document.createElement("li");
+                nuevoElemento.textContent = elemento;
+                if (elemento.toLowerCase().includes("de")) {
+                    nuevoElemento.classList.add("fondo-amarillo");
+                }
+                lista.appendChild(nuevoElemento);
+                elementoInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

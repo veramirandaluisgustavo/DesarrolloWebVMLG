@@ -1,0 +1,29 @@
+<form id="Autenticacion">
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario">
+    <br>
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" name="contrasena">
+    <br>
+    <button type="button" onclick="autenticarUsuario()">Ingresar</button>
+</form>
+<div id="mensaje"></div>
+<script>
+    function autenticarUsuario() {
+    var usuario = document.getElementById('usuario').value;
+    var contrasena = document.getElementById('contrasena').value;
+
+    fetch('autenticar.php', {
+        method: 'POST',
+        body: JSON.stringify({ usuario: usuario, contrasena: contrasena }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('mensaje').textContent = data;
+    })
+    
+}
+</script>
