@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+        display: table;
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      text-align: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+   
+
+
+  </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+              <td id="celda1" class="boton" onclick="hacerJugada('celda1')"></td>
+              <td id="celda2" class="boton" onclick="hacerJugada('celda2')"></td>
+              <td id="celda3" class="boton" onclick="hacerJugada('celda3')"></td>
+            </tr>
+            <tr>
+              <td id="celda4" class="boton" onclick="hacerJugada('celda4')"></td>
+              <td id="celda5" class="boton" onclick="hacerJugada('celda5')"></td>
+              <td id="celda6" class="boton" onclick="hacerJugada('celda6')"></td>
+            </tr>
+            <tr>
+              <td id="celda7" class="boton" onclick="hacerJugada('celda7')"></td>
+              <td id="celda8" class="boton" onclick="hacerJugada('celda8')"></td>
+              <td id="celda9" class="boton" onclick="hacerJugada('celda9')"></td>
+            </tr>
+          </table>
+    </div>
+
+  
+  
+
+
+
+  <script>
+    var turno = 'X';
+
+    function hacerJugada(celdaId) {
+      var celda = document.getElementById(celdaId);
+
+      if (celda.innerHTML === '') {
+        celda.innerHTML = turno;
+        turno = (turno === 'X') ? 'O' : 'X';
+        document.getElementById('mensaje').innerHTML = 'Turno: ' + turno;
+      } else {
+        document.getElementById('mensaje').innerHTML = 'Casilla ocupada, intenta de nuevo.';
+      }
+    }
+  </script>
+
+</body>
+</html>
