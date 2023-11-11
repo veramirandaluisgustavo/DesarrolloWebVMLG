@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container2">
+        <div class="menu_opciones" id="menu_opciones">
+            <div>
+                <label for="tabla">TABLA DEL:</label>
+                <input type="text" name="valor1" id="valor1">
+            </div>
+            <div>
+                <div class="opciones">
+                    <label for="suma">SUMA</label>
+                    <input onchange="restriccion('suma')" type="checkbox" name="suma" id="suma">
+                </div>
+                <div>
+                    <label for="resta">RESTA</label>
+                    <input onchange="restriccion('resta')" type="checkbox" name="resta" id="resta">
+                </div>
+                <div>
+                    <label for="factorial">FACTORIAL</label>
+                    <input onchange="restriccion('factorial')" type="checkbox" name="fatorial" id="factorial">
+                </div>
+    
+    
+            </div>
+            <div>
+                <label for="hasta">HASTA EL:</label>
+                <input type="text" name="valor2" id="valor2">
+            </div>
+    
+            <div>
+                <button onclick="calcular()">CALCULAR</button>
+            </div>
+    
+    
+        </div>
+        <div id="resultado">
+    
+        </div>
+    </div>
+    
+</body>
+
+</html>

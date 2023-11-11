@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button class="botones" onclick="botonRegistrado('1')">1</button>
+    <button class="botones" onclick="botonRegistrado('2')">2</button>
+    <button class="botones" onclick="botonRegistrado('3')">3</button>
+    <button class="botones" onclick="botonRegistrado('4')">4</button>
+    <button class="botones" onclick="botonRegistrado('5')">5</button>
+
+<script>
+    function botonRegistrado(boton){
+        console.log("funciona la funcion")
+        contenedor=document.getElementById("historial");
+        contenedor.innerHTML+="hola";
+
+    }
+</script>
+
+</body>
+
+</html>

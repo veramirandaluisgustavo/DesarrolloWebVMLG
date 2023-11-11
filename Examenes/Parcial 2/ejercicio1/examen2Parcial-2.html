@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" >
+        <div class="barra_botones" id="menu">
+            <button id="menuButton" class="botones" onclick="cargarContenido('botones.html')">MENU</button>
+        </div>
+        <div class="titulo" id="titulo">
+
+        </div>
+        <div class="principal" id="principal">
+
+        </div>
+        <div class="historial" id="historial">
+
+        </div>
+    </div>
+</body>
+<script>
+
+    function cargarContenido(abrir) {
+        var contenedor;
+        contenedor = document.getElementById('menu');
+        var ajax = new XMLHttpRequest() //crea el objetov ajax 
+        ajax.open("get", abrir, true);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4) {
+                console.log(ajax)
+                console.log(abrir)
+                console.log(contenedor)
+                contenido = "<button id='menuButton' class='botones' onclick='cargarContenido('botones.html')'>MENU</button>";
+                contenedor.innerHTML="";
+                contenedor.innerHTML = ajax.responseText + contenido;
+            }
+        }
+        ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+        ajax.send();
+        barra = document.getElementById("titulo");
+        barra.innerHTML = "VERA MIRANDA LUIS GUSTAVO   CU:35-4900"
+
+    }
+    function botonRegistrado(dato) {
+        var container;
+        container = document.getElementById('historial');
+        console.log("se llamo a la funcion  de un boton");
+        container.innerHTML += "<div>SE LLAMO AL BOTON: " + dato + "</div>";
+        switch (dato) {
+            case "1": break;
+            case "2":
+                cargarEjercicios("../ejercicio2/ejercicio2.html", 'principal');
+                break;
+        }
+
+
+    }
+    function cargarEjercicios(abrir, contenedor) {
+        var contenedor;
+        contenedor = document.getElementById(contenedor);
+        contenedor.innerHTML="";
+        var ajax = new XMLHttpRequest() //crea el objetov ajax 
+        ajax.open("get", abrir, true);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4) {
+                console.log(ajax)
+                console.log(abrir)
+                console.log(contenedor)
+                contenido = contenedor.innerHTML;
+                contenedor.innerHTML="";
+                contenedor.innerHTML = ajax.responseText + contenido;
+            }
+        }
+        ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+        ajax.send();
+
+
+    }
+    function restriccion(dato) {
+        suma = document.getElementById("suma");
+        resta = document.getElementById("resta");
+        factorial = document.getElementById("factorial");
+
+        // console.log("se ejecuta la restriccion");
+        console.log(dato + suma.checked);
+        switch (dato) {
+            case "suma":
+                console.log("se selecciono suma");
+                resta.checked = false;
+                factorial.checked = false;
+                break;
+            case "resta":
+                suma.checked = false;
+                factorial.checked = false;
+                break;
+            case "factorial":
+                suma.checked = false;
+                resta.checked = false;
+                break;
+        }
+
+
+    }
+    function calcular() {
+        console.log("se llamo a calcular")
+        container = document.getElementById("resultado");
+        dato1 = document.getElementById("valor1");
+        dato2 = document.getElementById("valor2");
+        suma = document.getElementById("suma");
+        resta = document.getElementById("resta");
+        factorial = document.getElementById("factorial");
+        var tabla;
+        alto=parseInt(dato2.value);
+        valor=parseInt(dato1.value);
+
+        if (suma.checked) {
+            tabla=generartabla(alto,valor,"+")
+
+        }
+        if(resta.checked){
+            tabla=generartabla(alto,valor,"-")
+        }
+        if(factorial.checked){
+            tabla=generartabla(alto,valor,"factorial")
+        }
+        container.innerHTML=tabla;
+
+    }
+    function generartabla(alto, valor, accion) {
+        
+        var resultado;
+        var tabla = "<table style='border: 1px solid black;border-collapse: collapse;'>";
+            console.log("se llamo a generar tabla");
+        if (accion == "factorial") {
+            console.log("entro a factorial");
+            console.log("valor de alto es: "+alto);
+            for (let i = 0; i < alto; i++) {
+                console.log("entro al for factorial");
+                indice = i + 1;
+                resultado = factorialCalculo(indice);
+                seccion = "<tr><td>FACTORIAL</td><td>" + indice + "</td><td>=</td><td>" + resultado + "</td></tr>";
+                console.log(seccion);
+                tabla = tabla + seccion;
+                console.log(seccion);
+
+            }
+        }
+        else {
+            console.log("generar taabla");
+            for (let i = 0; i < alto; i++) {
+                console.log("se genera suma y resta");
+                indice = i + 1;
+                var resultado;
+                switch (accion) {
+                    case "+": resultado = indice + valor; break;
+                    case "-": resultado = indice - valor; break;
+                }
+                seccion = "<tr><td>" + indice + "</td><td>" + accion + "</td><td>" + valor + "</td><td>=</td><td>" + resultado + "</td></tr>";
+                tabla = tabla + seccion;
+                console.log(seccion);
+            }
+
+        }
+        tabla = tabla + "</tabla>";
+
+
+        return tabla;
+    }
+    function factorialCalculo(n) {
+  let resultado = 1;
+
+  for (let i = 1; i <= n; i++) {
+    resultado *= i;
+  }
+
+  return resultado;
+}
+
+
+
+</script>
+
+</html>

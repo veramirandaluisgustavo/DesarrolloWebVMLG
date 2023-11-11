@@ -1,0 +1,67 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.titulo{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 900px;
+    background-color: orange;
+    border: 1px solid black;
+    text-align: center;
+    
+
+}
+.barra_botones{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 900px;
+    background-color: yellow;
+    border: 1px solid black;
+    align-items: center;
+    
+    
+}
+
+.principal{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 900px;
+    border: 1px solid black;
+
+}
+.historial{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 900px;
+    background-color: orange;
+    border: 1px solid black;
+}
+.botones{
+    
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+}
+#menuButton{
+    background-color: red;
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+}
+.menu_opciones{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    margin: 5px;
+    height: 150px;
+    width: 850px;
+    align-items: center;
+    align-content: center;
+}
