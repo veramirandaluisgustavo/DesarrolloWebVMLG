@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Usuarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        #insertar, #eliminar, #actualizar {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #insertar:hover, #eliminar:hover, #actualizar:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tabla de Usuarios</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cuenta</th>
+                <th>Clave</th>
+                <th>Email</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>Juan Pérez</td>
+            <td>juanp</td>
+            <td>********</td>
+            <td>juanp@email.com</td>
+            <td>Usuario</td>
+        </tr>
+        <tbody>
+            
+            <!-- Agrega más filas según sea necesario -->
+        </tbody>
+    </table>
+
+    <button id="insertar">Insertar</button>
+    <button id="eliminar">Eliminar</button>
+    <button id="actualizar">Actualizar</button>
+
+    <script>
+        // Aquí puedes agregar scripts JavaScript para manejar la lógica de los botones (insertar, eliminar, actualizar).
+        // Por ejemplo, podrías usar eventos onclick y manipular el DOM para agregar o quitar filas de la tabla.
+        // Pero ten en cuenta que este es solo un ejemplo básico y no se conecta a una base de datos real.
+    </script>
+
+</body>
+</html>
+
