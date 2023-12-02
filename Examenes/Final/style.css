@@ -1,0 +1,135 @@
+.container{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+.pagina{
+    display: flex;
+    border: 1px solid black;
+    height: 450px;
+    width: 900px;
+}
+#pie{
+    display: flex;
+    text-align: center;
+    height: 50px;
+    width: 900px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #F4B183;
+    color: white;
+    
+}
+#barra_superior{
+    display: flex;
+    height: 100px;
+    width: 900px;
+    border: 1px solid black;
+
+}
+#barra_superior img{
+
+height: auto;
+width: 80px;
+margin-left: 35px;
+margin-right: 35px;
+}
+#opciones{
+    display: flex;
+    flex-direction: column;
+    
+}
+#menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    width: 750px;
+    background-color: #F4B183;
+    border: 1px solid black;
+}
+#titulo{
+    display: flex;
+    
+    height: 50px;
+    width: auto;
+    background-color: #FBE5D6;
+    border: 1px solid black;
+}
+#sub-menu{
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    width: 150px;
+    border: 1px solid black;
+    align-items: center;
+
+}
+#boton-opcion{
+    height: 30px;
+    width: 130px;
+    margin-top: 10px;
+    background-color: #C55A11;
+    color: white;
+    border:1px solid orange;
+    
+
+}
+#contenido{
+    display: flex;
+    width: 750px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.opcion{
+    height: 30px;
+    width: 130px;
+    border:1px solid orange;
+    background-color: white;
+
+}
+.pregunta-boton{
+    height: 30px;
+    width: 130px;
+    border:1px solid black;
+    background-color: white;
+}
+.perfil{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 450px;
+    border: 1px solid gray;
+    position: relative;
+}
+#examen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #7C84E6;
+    height: 40%;
+    background-color: #D4DBF9;
+
+}
+#datos{
+    display: flex;
+    height: 100%;
+}
+#foto{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    border: 6px solid whitesmoke;
+}
