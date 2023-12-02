@@ -18,9 +18,7 @@
                     <button class="pregunta-boton">Pregunta 4</button>
                     <button class="pregunta-boton">Pregunta 5</button>
                 </div>
-                <div id="titulo">
-
-                </div>
+                <div id="titulo">PREGUNTA 1</div>
             </div>
         </div>
         <div class="pagina">
@@ -38,8 +36,13 @@
                     </div>
                     <div id="datos">
                         <div>VERA MIRANDA LUIS GUSTAVO</div>
-                        <div>Carrera: Ing.Sistemas,Ing.Ciencias de la Computacion</div>
-                        <div>Repositorio:</div>
+                        <div style="color: gray;">Carrera: Ing.Sistemas, Ing.Ciencias de la Computacion</div>
+                        <div>
+                        <label style="color: gray;" for="">Repositorio Examen: </label>
+                            <a  style="color: gray;" href="https://github.com/veramirandaluisgustavo/DesarrolloWebVMLG/tree/main/Examenes/Final">repositorio link</a>
+                        </div>
+                            
+                        
                     </div>
                     <img id="foto" src="./images/foto.png" >
                 </div>

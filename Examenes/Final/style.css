@@ -54,7 +54,8 @@ margin-right: 35px;
 }
 #titulo{
     display: flex;
-    
+    justify-content: center;
+    align-items: center;
     height: 50px;
     width: auto;
     background-color: #FBE5D6;
@@ -122,7 +123,13 @@ margin-right: 35px;
 }
 #datos{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
     height: 100%;
+}
+#datos div{
+    margin-left: 10px;
 }
 #foto{
     height: 80px;
